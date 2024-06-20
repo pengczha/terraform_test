@@ -4,7 +4,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "example" {
   name     = "Databricks-RG"
-  location = "East US"
+  location = "West Europe"
 }
 
 resource "azurerm_virtual_network" "Spoke" {
