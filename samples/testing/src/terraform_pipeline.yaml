@@ -49,3 +49,10 @@ stages:
           command: plan
           workingDirectory: $(terraformWorkingDirectory)
           environmentServiceName: $(serviceConnection)
+      # Step 6: apply Terraform plan 
+      - task: TerraformCLI@0
+        displayName: 'Apply terraform plan'
+        inputs:
+          command: apply
+          workingDirectory: $(terraformWorkingDirectory)
+          environmentServiceName: $(serviceConnection)
