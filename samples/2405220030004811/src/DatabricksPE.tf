@@ -1,3 +1,11 @@
+locals {
+  prefix = "abd-pl"
+  tags = {
+    Environment = "Demo"
+    Owner       = lookup(data.external.me.result, "name")
+  }
+}
+
 resource "azurerm_private_endpoint" "uiapi" {
   name                = "uiapipvtendpoint"
   location            = var.location
