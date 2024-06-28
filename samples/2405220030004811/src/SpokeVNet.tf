@@ -1,3 +1,11 @@
+locals {
+  prefix = "abd-pl"
+  tags = {
+    Environment = "Demo"
+    Owner       = lookup(data.external.me.result, "name")
+  }
+}
+
 resource "azurerm_virtual_network" "this" {
   name                = "${local.prefix}-vnet"
   location            = var.location
