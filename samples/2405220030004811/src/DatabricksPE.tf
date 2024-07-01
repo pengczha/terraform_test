@@ -2,12 +2,6 @@ locals {
   prefix = "abd-pl"
 }
 
-resource "azurerm_resource_group" "this" {
-  name     = var.rg_name
-  location = var.location
-}
-
-
 resource "azurerm_private_endpoint" "uiapi" {
   name                = "uiapipvtendpoint"
   location            = var.location
