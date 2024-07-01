@@ -5,7 +5,7 @@ variable "cidr" {
 
 variable "rg_name" {
   type = string
-  default = "abd-pl-rg"
+  default = "abd-pl-test1-rg"
 }
 
 variable "location" {
