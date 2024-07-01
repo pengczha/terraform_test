@@ -33,6 +33,14 @@ resource "azurerm_private_dns_zone_virtual_network_link" "uiapidnszonevnetlink" 
   virtual_network_id    = azurerm_virtual_network.this.id // connect to spoke vnet
 }
 
+
+resource "azurerm_private_dns_zone_virtual_network_link" "uiapidnszonevnetlinkwithhub" {
+  name                  = "uiapihubvnetconnection"
+  resource_group_name   = var.rg_name
+  private_dns_zone_name = azurerm_private_dns_zone.dnsuiapi.name
+  virtual_network_id    = azurerm_virtual_network.hub.id // connect to hub vnet
+}
+
 resource "azurerm_private_endpoint" "auth" {
   name                = "aadauthpvtendpoint"
   location            = var.location
