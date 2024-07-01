@@ -1,3 +1,10 @@
+resource "azurerm_virtual_network" "hub" {
+  name                = "Hub-VNet"
+  location            = var.location
+  resource_group_name = var.rg_name
+  address_space       = ["10.2.0.0/16"]
+}
+
 resource "azurerm_virtual_network" "this" {
   name                = "${local.prefix}-vnet"
   location            = var.location
@@ -101,3 +108,18 @@ resource "azurerm_subnet" "plsubnet" {
   address_prefixes                          = [cidrsubnet(var.cidr, 3, 2)]
   private_endpoint_network_policies_enabled = true
 }
+
+resource "azurerm_virtual_network_peering" "hubtospoke" {
+  name                      = "hubtospoke"
+  resource_group_name       = var.rg_name
+  virtual_network_name      = azurerm_virtual_network.hub.name
+  remote_virtual_network_id = azurerm_virtual_network.this.id
+}
+
+resource "azurerm_virtual_network_peering" "spoketohub" {
+  name                      = "spoketohub"
+  resource_group_name       = var.rg_name
+  virtual_network_name      = azurerm_virtual_network.this.name
+  remote_virtual_network_id = azurerm_virtual_network.hub.id
+}
+
