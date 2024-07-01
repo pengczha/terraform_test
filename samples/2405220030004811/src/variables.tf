@@ -13,6 +13,11 @@ variable "location" {
   default = "westeurope"
 }
 
+variable "workspace_prefix" {
+  type = string
+  default = "abd-pl"
+}
+
 data "azurerm_client_config" "current" {
 }
 
