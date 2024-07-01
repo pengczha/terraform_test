@@ -3,7 +3,6 @@ resource "azurerm_databricks_workspace" "this" {
   resource_group_name                   = var.rg_name
   location                              = var.location
   sku                                   = "premium"
-  tags                                  = local.tags
   public_network_access_enabled         = true
   network_security_group_rules_required = "NoAzureDatabricksRules"
   customer_managed_key_enabled          = true
