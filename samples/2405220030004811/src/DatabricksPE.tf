@@ -1,8 +1,5 @@
 locals {
   prefix = "abd-pl"
-  tags = {
-    Environment = "Demo"
-    Owner       = lookup(data.external.me.result, "name")
   }
 }
 
