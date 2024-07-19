@@ -5,7 +5,7 @@ variables:
   serviceConnection: 'terraform-basic-testing-azure-connection'
   azureLocation: 'westeurope'
   # Terraform settings
-  terraformWorkingDirectory: '$(System.DefaultWorkingDirectory)/samples/2405220030004811/src'
+  terraformWorkingDirectory: '$(System.DefaultWorkingDirectory)/samples/cross_sub_test/src'
 
 stages:
   - stage: TerraformContinuousIntegration
