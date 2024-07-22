@@ -6,6 +6,7 @@ terraform {
     azurerm = {
       source  = "hashicorp/azurerm"
       version = ">=3.43.0"
+      configuration_aliases = [azurerm.hub-sub, azurerm.spoke-sub]
     }
   }
 }
