@@ -1,14 +1,5 @@
 # Azure Pipeline that run basic continuous integration on a Terraform project
 
-# This makes sure the pipeline is triggered every time code is pushed in the validation-testing example source, on all branches.
-trigger:
-  branches:
-    include:
-    - '*'
-  paths:
-    include:
-    - 'samples/2405220030004811/src/*'
-
 variables:
   # There must be an Azure Service Connection with that name defined in your Azure DevOps settings. See https://docs.microsoft.com/en-us/azure/devops/pipelines/library/connect-to-azure?view=azure-devops
   serviceConnection: 'terraform-basic-testing-azure-connection'
