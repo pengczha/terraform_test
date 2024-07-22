@@ -9,12 +9,12 @@ variable "cidr" {
 
 variable "rg_name" {
   type = string
-  default = "adb-pl-test-rg"
+  default = "adb-pl-cross-sub-test-rg"
 }
 
 variable "hub_rg_name" {
   type = string
-  default = "hub-test-rg"
+  default = "hub-cross-sub-test-rg"
 }
 
 variable "location" {
