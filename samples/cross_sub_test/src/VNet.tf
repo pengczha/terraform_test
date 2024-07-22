@@ -11,5 +11,5 @@ resource "azurerm_virtual_network" "spoke" {
   name                = "Spoke-VNet"
   location            = var.location
   resource_group_name = var.rg_name
-  address_space       = [10.2.0.0/16]
+  address_space       = ["10.2.0.0/16"]
 }
