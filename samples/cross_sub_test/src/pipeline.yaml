@@ -28,13 +28,6 @@ stages:
           command: init
           commandOptions: '-var secret=$(terraformsppengczha_secret)'
           workingDirectory: $(terraformWorkingDirectory)
-      # Step 4: run Terraform validate to validate HCL syntax
-      - task: TerraformCLI@0
-        displayName: 'Run terraform validate'
-        inputs:
-          command: validate
-          commandOptions: '-var secret=$(terraformsppengczha_secret)'
-          workingDirectory: $(terraformWorkingDirectory)
       # Step 5: run Terraform plan to validate HCL syntax
       - task: TerraformCLI@0
         displayName: 'Run terraform plan'
