@@ -1,11 +1,3 @@
-locals {
-  prefix = "abd-pl"
-  tags = {
-    Environment = "Demo"
-    Owner       = lookup(data.external.me.result, "name")
-  }
-}
-
 resource "azurerm_databricks_workspace" "this" {
   name                                  = "${local.prefix}-workspace"
   resource_group_name                   = var.rg_name
