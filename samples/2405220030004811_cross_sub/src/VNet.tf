@@ -1,6 +1,6 @@
 resource "azurerm_virtual_network" "hub" {
   provider            = azurerm.hub-sub
-  name                = "Hub-VNet"
+  name                = "Hub-Sub-VNet"
   location            = var.location
   resource_group_name = var.hub_rg_name
   address_space       = ["10.2.0.0/16"]
