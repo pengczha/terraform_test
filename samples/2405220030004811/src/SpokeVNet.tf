@@ -3,14 +3,12 @@ resource "azurerm_virtual_network" "this" {
   location            = var.location
   resource_group_name = var.rg_name
   address_space       = [var.cidr]
-  tags                = local.tags
 }
 
 resource "azurerm_network_security_group" "this" {
   name                = "${local.prefix}-nsg"
   location            = var.location
   resource_group_name = var.rg_name
-  tags                = local.tags
 }
 
 resource "azurerm_network_security_rule" "aad" {
