@@ -5,7 +5,7 @@ variable "cidr" {
 
 variable "rg_name" {
   type = string
-  default = "abd-pl-rg-test1"
+  default = "adb-pl-cross-sub-test-rg"
 }
 
 variable "location" {
@@ -13,17 +13,10 @@ variable "location" {
   default = "westeurope"
 }
 
+variable "workspace_prefix" {
+  type = string
+  default = "abd-pl"
+}
+
 data "azurerm_client_config" "current" {
-}
-
-data "external" "me" {
-  program = ["az", "account", "show", "--query", "user"]
-}
-
-locals {
-  prefix = "abd-pl"
-  tags = {
-    Environment = "Demo"
-    Owner       = lookup(data.external.me.result, "name")
-  }
 }
