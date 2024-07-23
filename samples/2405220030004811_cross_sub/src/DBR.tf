@@ -62,6 +62,8 @@ resource "azurerm_private_endpoint" "auth" {
     name                 = "private-dns-zone-auth"
     private_dns_zone_ids = [azurerm_private_dns_zone.dnsuiapi.id]
   }
+
+  depends_on = [azurerm_private_endpoint.uiapi]
 }
 
 resource "azurerm_databricks_workspace" "this" {
