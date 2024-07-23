@@ -1,3 +1,7 @@
+locals {
+  prefix = "abd-pl"
+}
+
 resource "azurerm_private_endpoint" "uiapi" {
   name                = "uiapipvtendpoint"
   location            = var.location
