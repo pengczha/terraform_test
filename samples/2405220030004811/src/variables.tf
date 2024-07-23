@@ -5,7 +5,7 @@ variable "cidr" {
 
 variable "rg_name" {
   type = string
-  default = "adb-pl-cross-sub-test-rg"
+  default = "adb-pl-test1-rg"
 }
 
 variable "location" {
