@@ -120,7 +120,7 @@ resource "azurerm_subnet" "plsubnet" {
 }
 
 resource "azurerm_virtual_network_peering" "hubtospoke" {
-  provider                  = azurerm.hub-sub  
+  provider                  = azurerm.spoke-sub  
   name                      = "hubtospoke"
   resource_group_name       = var.rg_name
   virtual_network_name      = azurerm_virtual_network.hub.name
@@ -128,7 +128,7 @@ resource "azurerm_virtual_network_peering" "hubtospoke" {
 }
 
 resource "azurerm_virtual_network_peering" "spoketohub" {
-  provider                  = azurerm.spoke-sub  
+  provider                  = azurerm.hub-sub  
   name                      = "spoketohub"
   resource_group_name       = var.hub_rg_name
   virtual_network_name      = azurerm_virtual_network.this.name
